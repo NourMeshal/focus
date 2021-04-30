@@ -17,6 +17,8 @@
 		EF8424B6263B83E3003DF52A /* PTSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8424B2263B83E2003DF52A /* PTSerif-Bold.ttf */; };
 		EF8424B7263B83E3003DF52A /* PTSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8424B3263B83E3003DF52A /* PTSerif-BoldItalic.ttf */; };
 		EF8424BB263B9412003DF52A /* Motivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8424BA263B9412003DF52A /* Motivation.swift */; };
+		EFD732DA263C54A800CB502F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD732D9263C54A800CB502F /* User.swift */; };
+		EFD732DE263CA14C00CB502F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD732DD263CA14C00CB502F /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		EF8424B2263B83E2003DF52A /* PTSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Bold.ttf"; sourceTree = "<group>"; };
 		EF8424B3263B83E3003DF52A /* PTSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EF8424BA263B9412003DF52A /* Motivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.swift; sourceTree = "<group>"; };
+		EFD732D9263C54A800CB502F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFD732DD263CA14C00CB502F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 			children = (
 				EF842462263B595E003DF52A /* FocusAppApp.swift */,
 				EF842464263B595E003DF52A /* ContentView.swift */,
+				EFD732DD263CA14C00CB502F /* SwiftUIView.swift */,
+				EFD732D9263C54A800CB502F /* User.swift */,
 				EF8424BA263B9412003DF52A /* Motivation.swift */,
 				EF842466263B5962003DF52A /* Assets.xcassets */,
 				EF84246B263B5962003DF52A /* Info.plist */,
@@ -162,7 +168,9 @@
 			files = (
 				67297692263BC72C0095A0A8 /* tasks.swift in Sources */,
 				EF842465263B595E003DF52A /* ContentView.swift in Sources */,
+				EFD732DE263CA14C00CB502F /* SwiftUIView.swift in Sources */,
 				EF842463263B595E003DF52A /* FocusAppApp.swift in Sources */,
+				EFD732DA263C54A800CB502F /* User.swift in Sources */,
 				EF8424BB263B9412003DF52A /* Motivation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

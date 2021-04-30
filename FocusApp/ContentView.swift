@@ -52,9 +52,12 @@ struct TimerView: View {
     @State var stillSec = true
    @State var showingAlert = false
     @State var timeInMin = -1
+    @State var task: String = ""
+    @State var tasks: [String]
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
-        NavigationView {
+        NavigationView{
             ZStack{
                 Color("Color")
                 HStack{
@@ -64,8 +67,7 @@ struct TimerView: View {
                         .offset(x: 100, y: -300)
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 }
-                VStack{
-                    
+               
                     Text("\(timeInMin):\(timeInSec)")
                         .foregroundColor(Color("Forground"))
                         .font(.custom("PTSerif-Bold.ttf", size: 80))
@@ -81,31 +83,92 @@ struct TimerView: View {
                             }
                             while stillSec
                         }
-                    
-                    
+                VStack{
+                    NavigationLink(destination: ListView()){
+                        Text("Tesk")
+                            .foregroundColor(Color("Forground"))
+                            .font(.custom("PTSerif-Bold.ttf", size: 30))
+                            .padding()
+                           
+                          
+                             
+                         
+                    }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .offset(x: -148, y: -255)
                     VStack {
+                        HStack{
+                            Text("\(task)")
+                                .foregroundColor(Color("Forground"))
+                                .font(.system(size: 30))
+                          
+                            
+                        }.offset(x: 100, y: 330)
+                       
                         Button("Stop") {
                          self.showingAlert = true
-                            self.timer.upstream.connect().cancel()
+                        self.timer.upstream.connect().cancel()
                             
                         }.foregroundColor(Color("Forground"))
                         .font(.system(size: 30))
                         .buttonStyle(OutlineButton())
                         .offset(x: 1, y: 100)
                         .sheet(isPresented: $showingAlert) {
+                            ZStack{
+                                Color("Color")
                             VStack {
-                                Text("ddd")
-                            }
+                                Text("Your Done!")
+                                    .offset(x: 1, y: -100)
+                                    .font(.system(size: 30))
+                                    .foregroundColor(Color("Forground"))
+                                    .padding()
+                                    .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .background(
+                                        RoundedRectangle(
+                                            cornerRadius: 15,
+                                            style: .continuous
+                                        ) .stroke(Color("Forground"))
+                                    )
+                                
+                                TextField("Enter Your Task here", text: $task)
+                                    .padding()
+                                    .background(Color("Forground"))
+                                    .border(Color("Forground"), width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                                    .accentColor(Color("Color"))
+                                    .cornerRadius(15)
+                                    .frame(width: 250, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .offset(x: 1, y: -200)
+                                
+                            
+                                Button("Done"){
+                                    self.showingAlert = false
+                                    
+                                
+                                }
+                                .foregroundColor(Color("Forground"))
+                                .padding()
+                                .frame(width: 100, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .background(
+                                    RoundedRectangle(
+                                        cornerRadius: 15,
+                                        style: .continuous
+                                    ).stroke(Color("Forground"))
+                                     
+                                     
+                                )
+                                .offset(x: 1, y: -180)
+                               }
+                            }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                         }
+                       
                     }
                     
                 }
             }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            
-            
-        }
+           
+        }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .accentColor(Color("Forground"))
+        
     }
-    
     struct OutlineButton: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration
@@ -123,6 +186,18 @@ struct TimerView: View {
     }
     
     
+}
+
+struct ListView: View{
+    var body: some View{
+        ZStack{
+            Color("Color")
+            List{
+                
+            }
+            
+        }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+    }
 }
 
 

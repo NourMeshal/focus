@@ -13,25 +13,19 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             TimerView()
-          ZStack{
-            Color("Color")
-            
-            /*Image("bigIcon")
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: animate ? .fill : .fit)
-                .frame(width: animate ? nil : 200, height: animate ? nil : 200)*/
-            
-            //Scaling View...
-                .scaleEffect(animate ? 3:1)
-            //Setting width to avoid OverSize..
-                .frame(width: UIScreen.main.bounds.width)
-            
-        }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        .onAppear(perform: animateSplash)
-        // hiding view after finished...
-        .opacity(endSplash ? 0:1)
-      }
+            ZStack{
+                Color("Color")
+                    
+                    //Scaling View...
+                    .scaleEffect(animate ? 3:1)
+                    //Setting width to avoid OverSize..
+                    .frame(width: UIScreen.main.bounds.width)
+                
+            }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            .onAppear(perform: animateSplash)
+            // hiding view after finished...
+            .opacity(endSplash ? 0:1)
+        }
         
     }
     func animateSplash(){
@@ -54,44 +48,60 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct TimerView: View {
-    @State var timeRemaining = 1
-    @State var hours = 1
+    @State var timeInSec = 0
+    @State var stillSec = true
+   @State var showingAlert = false
+    @State var timeInMin = -1
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         NavigationView {
-        ZStack{
-            Color("Color")
-            HStack{
-                Image("Img1")
-                    .resizable()
-                    .frame(width: 215, height: 360, alignment: .leading)
-                    .offset(x: 100, y: -300)
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            }
-            VStack{
-                
-                Text("\(timeRemaining)")
-                    .foregroundColor(Color("Forground"))
-                    .font(.custom("PTSerif-Bold.ttf", size: 80))
-                    .offset(x: 1, y: -50)
-                    .onReceive(timer) { _ in
-                          if timeRemaining > 0 {
-                           timeRemaining += 1
-                   }
+            ZStack{
+                Color("Color")
+                HStack{
+                    Image("Img1")
+                        .resizable()
+                        .frame(width: 215, height: 360, alignment: .leading)
+                        .offset(x: 100, y: -300)
+                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 }
-            
-                
-                Button("Stop") {
-                    self.timer.upstream.connect().cancel()
-                
-                }.foregroundColor(Color("Forground"))
-                .font(.system(size: 30))
-                .buttonStyle(OutlineButton())
-                .offset(x: 1, y: 100)
-    
-            }
+                VStack{
+                    
+                    Text("\(timeInMin):\(timeInSec)")
+                        .foregroundColor(Color("Forground"))
+                        .font(.custom("PTSerif-Bold.ttf", size: 80))
+                        .offset(x: 1, y: -50)
+                        .onReceive(timer) { _ in
+                            repeat {
+                                if timeInSec == 60 {
+                                    self.stillSec = false
+                                    self.timeInMin += 1
+                                    self.timeInSec = 0
+                                }
+                                self.timeInSec += 1
+                            }
+                            while stillSec
+                        }
+                    
+                    
+                    VStack {
+                        Button("Stop") {
+                         self.showingAlert = true
+                            self.timer.upstream.connect().cancel()
+                            
+                        }.foregroundColor(Color("Forground"))
+                        .font(.system(size: 30))
+                        .buttonStyle(OutlineButton())
+                        .offset(x: 1, y: 100)
+                        .sheet(isPresented: $showingAlert) {
+                            VStack {
+                                Text("ddd")
+                            }
+                        }
+                    }
+                    
+                }
             }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        
+            
             
         }
     }
@@ -108,7 +118,7 @@ struct TimerView: View {
                         cornerRadius: 15,
                         style: .continuous
                     ).stroke(Color("Forground"))
-            )
+                )
         }
     }
     
@@ -118,5 +128,5 @@ struct TimerView: View {
 
 
 
-    
+
 

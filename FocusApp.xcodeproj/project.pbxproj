@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67297692263BC72C0095A0A8 /* tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67297691263BC72C0095A0A8 /* tasks.swift */; };
 		EF842463263B595E003DF52A /* FocusAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF842462263B595E003DF52A /* FocusAppApp.swift */; };
 		EF842465263B595E003DF52A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF842464263B595E003DF52A /* ContentView.swift */; };
 		EF842467263B5962003DF52A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF842466263B5962003DF52A /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67297691263BC72C0095A0A8 /* tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasks.swift; sourceTree = "<group>"; };
 		EF84245F263B595E003DF52A /* FocusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF842462263B595E003DF52A /* FocusAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusAppApp.swift; sourceTree = "<group>"; };
 		EF842464263B595E003DF52A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				EF8424B0263B83E2003DF52A /* PTSerif-Italic.ttf */,
 				EF8424B1263B83E2003DF52A /* PTSerif-Regular.ttf */,
 				EF842468263B5962003DF52A /* Preview Content */,
+				67297691263BC72C0095A0A8 /* tasks.swift */,
 			);
 			path = FocusApp;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67297692263BC72C0095A0A8 /* tasks.swift in Sources */,
 				EF842465263B595E003DF52A /* ContentView.swift in Sources */,
 				EF842463263B595E003DF52A /* FocusAppApp.swift in Sources */,
 				EF8424BB263B9412003DF52A /* Motivation.swift in Sources */,

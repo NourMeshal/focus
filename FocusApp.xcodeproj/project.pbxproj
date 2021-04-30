@@ -11,6 +11,11 @@
 		EF842465263B595E003DF52A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF842464263B595E003DF52A /* ContentView.swift */; };
 		EF842467263B5962003DF52A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF842466263B5962003DF52A /* Assets.xcassets */; };
 		EF84246A263B5962003DF52A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF842469263B5962003DF52A /* Preview Assets.xcassets */; };
+		EF8424B4263B83E3003DF52A /* PTSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8424B0263B83E2003DF52A /* PTSerif-Italic.ttf */; };
+		EF8424B5263B83E3003DF52A /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8424B1263B83E2003DF52A /* PTSerif-Regular.ttf */; };
+		EF8424B6263B83E3003DF52A /* PTSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8424B2263B83E2003DF52A /* PTSerif-Bold.ttf */; };
+		EF8424B7263B83E3003DF52A /* PTSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8424B3263B83E3003DF52A /* PTSerif-BoldItalic.ttf */; };
+		EF8424BB263B9412003DF52A /* Motivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8424BA263B9412003DF52A /* Motivation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		EF842466263B5962003DF52A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF842469263B5962003DF52A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF84246B263B5962003DF52A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF8424B0263B83E2003DF52A /* PTSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Italic.ttf"; sourceTree = "<group>"; };
+		EF8424B1263B83E2003DF52A /* PTSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Regular.ttf"; sourceTree = "<group>"; };
+		EF8424B2263B83E2003DF52A /* PTSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Bold.ttf"; sourceTree = "<group>"; };
+		EF8424B3263B83E3003DF52A /* PTSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EF8424BA263B9412003DF52A /* Motivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +64,13 @@
 			children = (
 				EF842462263B595E003DF52A /* FocusAppApp.swift */,
 				EF842464263B595E003DF52A /* ContentView.swift */,
+				EF8424BA263B9412003DF52A /* Motivation.swift */,
 				EF842466263B5962003DF52A /* Assets.xcassets */,
 				EF84246B263B5962003DF52A /* Info.plist */,
+				EF8424B2263B83E2003DF52A /* PTSerif-Bold.ttf */,
+				EF8424B3263B83E3003DF52A /* PTSerif-BoldItalic.ttf */,
+				EF8424B0263B83E2003DF52A /* PTSerif-Italic.ttf */,
+				EF8424B1263B83E2003DF52A /* PTSerif-Regular.ttf */,
 				EF842468263B5962003DF52A /* Preview Content */,
 			);
 			path = FocusApp;
@@ -127,7 +142,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF84246A263B5962003DF52A /* Preview Assets.xcassets in Resources */,
+				EF8424B7263B83E3003DF52A /* PTSerif-BoldItalic.ttf in Resources */,
+				EF8424B4263B83E3003DF52A /* PTSerif-Italic.ttf in Resources */,
 				EF842467263B5962003DF52A /* Assets.xcassets in Resources */,
+				EF8424B6263B83E3003DF52A /* PTSerif-Bold.ttf in Resources */,
+				EF8424B5263B83E3003DF52A /* PTSerif-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +159,7 @@
 			files = (
 				EF842465263B595E003DF52A /* ContentView.swift in Sources */,
 				EF842463263B595E003DF52A /* FocusAppApp.swift in Sources */,
+				EF8424BB263B9412003DF52A /* Motivation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
